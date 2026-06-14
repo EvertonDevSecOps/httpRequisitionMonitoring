@@ -24,13 +24,22 @@ urls = [
     "https://jsonplaceholder.typicode.com/posts/1",
     "https://httpbin.org/get",
 ]
-# counter for indicate the numbers of requisitions.
-counter = 1
 
-# Loop that iterates ihn URL list, do the requisition and sav in .log archive.
-for url in urls:
-    res = monitoring(url)
-    print(counter)
-    counter += 1
-    save_log(res)
-print("End the monitoring")
+
+
+
+def main():
+    """
+    Main function
+    :return: The results of the monitoring
+    """
+    counter = 1
+    for url in urls:
+        res = monitoring(url)
+        print(counter)
+        counter += 1
+        save_log(res)
+    print("End the monitoring")
+
+if __name__ == "__main__":
+    main()
